@@ -2,11 +2,22 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
 
 
+HTMLtemplate = 
+"""
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    </body>
+</html>
+"""
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b'Hello, world!')
+        self.wfile.write(b'Hello, world!')  
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
