@@ -1,0 +1,23 @@
+{
+  "name": "accessibility-web",
+  "version": "1.0.0",
+  "description": "help people decide where to go",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loicmurumba/accessibility-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loicmurumba/accessibility-web/issues"
+  },
+  "homepage": "https://github.com/loicmurumba/accessibility-web#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^7.2.2"
+  }
+}
