@@ -1,3 +1,4 @@
+
 const express = require('express')
 const path = require('path');
 
@@ -15,6 +16,9 @@ const port = 3000
 const app = express()
 app.use(express.static("public"));
 
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var request = new XMLHttpRequest();
+
 // Firebase setup
 var config = {
   apiKey: "apiKey",
@@ -27,8 +31,20 @@ var database = firebase.database();
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
 
-var starCountRef = firebase.database().ref('posts/');
 
-starCountRef.on('value', function(snapshot) {
-  // write here
-});
+// starCountRef.on('value', function(snapshot) {
+//   console.log(snapshot)
+  
+//   updateStarCount(postElement, snapshot.val());
+// });
+//var coord = {"lat":112.0, "long":39.0};
+params = [['lat',"30"],['lon',"136.1"],['APPID','app_id_key']]
+var url = new URL ("http://api.openweathermap.org/data/2.5/weather");
+url.search = new URLSearchParams(params).toString();
+
+request.open("GET", url)
+request.onreadystatechange = function() {
+  console.log(this.responseText);
+}
+
+request.send()
