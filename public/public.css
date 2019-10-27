@@ -1,3 +1,19 @@
 p { 
     font-size: 30px;
 }
+.logo {
+    float: left;
+    max-width: 75px;
+}
+body {
+    padding: 100px;
+    padding-top: 75px;
+}
+.title {
+    align-self: flex-end;
+}
+.titleDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
