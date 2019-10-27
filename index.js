@@ -24,3 +24,8 @@ var database = firebase.database();
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/', 'index.html')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+starCountRef.on('value', function(snapshot) {
+  updateStarCount(postElement, snapshot.val());
+});
